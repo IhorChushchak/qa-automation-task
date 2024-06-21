@@ -1,0 +1,143 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-06-21T18:25:15.548Z",
+    "end": "2024-06-21T18:25:19.614Z",
+    "duration": 4066,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "ddd30c00-967f-4c11-80d1-88b300c569f6",
+      "title": "",
+      "fullFile": "cypress\\e2e\\login.cy.ts",
+      "file": "cypress\\e2e\\login.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "991a2f57-cdf6-4e74-89b7-f0eaf9706f6e",
+          "title": "Login Page Tests",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should display all elements on the page",
+              "fullTitle": "Login Page Tests should display all elements on the page",
+              "timedOut": null,
+              "duration": 1058,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.getUsernameField().should('be.visible');\nloginPage.getPasswordField().should('be.visible');\nloginPage.getLoginButton().should('be.visible');",
+              "err": {},
+              "uuid": "1ad24f0c-1eec-4683-939b-98cc92d00bfb",
+              "parentUUID": "991a2f57-cdf6-4e74-89b7-f0eaf9706f6e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should display error messages for invalid login",
+              "fullTitle": "Login Page Tests should display error messages for invalid login",
+              "timedOut": null,
+              "duration": 2159,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture('invalidCredentials').then((invalidCredentials) => {\n    invalidCredentials.forEach((credentials) => {\n        loginPage.login(credentials.username, credentials.password);\n        loginPage.getErrorMessage().should('be.visible');\n    });\n});",
+              "err": {},
+              "uuid": "2dd06366-4e4c-40ed-953f-62b7ad626341",
+              "parentUUID": "991a2f57-cdf6-4e74-89b7-f0eaf9706f6e",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should fail due to unsuccessful login",
+              "fullTitle": "Login Page Tests should fail due to unsuccessful login",
+              "timedOut": null,
+              "duration": 784,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "loginPage.login('invalidUser', 'invalidPassword');\nloginPage.getErrorMessage().should('be.visible');",
+              "err": {},
+              "uuid": "36610950-eb48-4e00-b63b-01319d82c8ff",
+              "parentUUID": "991a2f57-cdf6-4e74-89b7-f0eaf9706f6e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1ad24f0c-1eec-4683-939b-98cc92d00bfb",
+            "2dd06366-4e4c-40ed-953f-62b7ad626341",
+            "36610950-eb48-4e00-b63b-01319d82c8ff"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 4001,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
