@@ -11,8 +11,8 @@ This repository contains the Test Automation Framework (TAF) for the QA Automati
 
     <Installation>
         <Clone the repository>:
-           - git clone 
-           - cd qa-automation-task
+            - git clone 
+            - cd qa-automation-task
 
         <Install dependencies>:
             - npm install
@@ -20,6 +20,7 @@ This repository contains the Test Automation Framework (TAF) for the QA Automati
             - npm install cypress --save-dev
             - npm install ts-node typescript @types/node --save-dev
             - npm install mochawesome --save-dev
+            - npm install chai --save-dev
 
     <Running Tests>
         - npm run test
